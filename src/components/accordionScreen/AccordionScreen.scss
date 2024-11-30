@@ -33,6 +33,7 @@
             }
         }
         @media (max-width: 376px) {
+            padding-bottom: 15px;
             &:not(:last-child) {
                 margin-bottom: 33px;
             }
@@ -80,6 +81,7 @@
             }
             @media (max-width: 376px) {
                 margin-right: 20px;
+                margin-bottom: 3px;
             }
         }
         &.show {
