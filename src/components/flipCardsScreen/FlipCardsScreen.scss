@@ -63,6 +63,24 @@
                 background-color: #C2F23C;
                 transition: 0.3s all;
                 z-index: 1;
+                &_bg-1 {
+                    background-image: url('./img/back_illustr_1.jpg');
+                }
+                &_bg-2 {
+                    background-image: url('./img/back_illustr_2.jpg');
+                }
+                &_bg-3 {
+                    background-image: url('./img/back_illustr_3.jpg');
+                }
+                &_bg-4 {
+                    background-image: url('./img/back_illustr_4.jpg');
+                }
+                &_bg-5 {
+                    background-image: url('./img/back_illustr_5.jpg');
+                }
+                &_bg-6 {
+                    background-image: url('./img/back_illustr_6.jpg');
+                }
             }
             &__back {
                 background-color: #fff;

@@ -13,10 +13,6 @@ export default function FlipCard({flipCard}: FlipCardProps): JSX.Element {
         setIsRotate(isRotate ? false : true);
     }
 
-    const getImg = (id: number) => {
-        return require(`./img/back_illustr_${id}.jpg`);
-    }
-
     const onMouseEnterHandle = () => {
         setIsShowBackground(true);
     }
@@ -33,12 +29,7 @@ export default function FlipCard({flipCard}: FlipCardProps): JSX.Element {
             onMouseLeave={onMouseLeaveHandle}
         >
             <div className="flip-card__wrap">
-                <div className="flip-card__front">
-                    {
-                        isShowBackground ?
-                        <img className="flip-card__img" src={getImg(flipCard.id)} alt="flip-card-back" /> :
-                        null
-                    }
+                <div className={isShowBackground ? `flip-card__front flip-card__front_bg-${flipCard.id}` : "flip-card__front"}>
                     <div className="flip-card__title">{flipCard.title}</div>
                 </div>
                 <div className="flip-card__back">
