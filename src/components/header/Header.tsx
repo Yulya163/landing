@@ -1,16 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import { menuLinks } from '../../data';
 import { MenuLinkType } from '../../types';
 import Link from './Link';
 import './Header.scss';
 
-type HeaderProps = {
-    isScroll: boolean;
-};
-
-export default function Header({isScroll}: HeaderProps): JSX.Element {
+export default function Header(): JSX.Element {
     const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
+    const [scrollTop, setScrollTop] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollTop(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const onClickMenuHandle = () => {
         setIsShowMobileMenu(true);
@@ -24,7 +33,7 @@ export default function Header({isScroll}: HeaderProps): JSX.Element {
 
     return (
         <header
-            className={isScroll ? 'header header_shadow' : 'header'}
+            className={!!scrollTop ? 'header header_shadow' : 'header'}
         >
             <div className="container header__wrap">
                 <a href="#" className="header__logo">

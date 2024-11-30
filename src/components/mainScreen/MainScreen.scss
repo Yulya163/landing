@@ -1,11 +1,4 @@
 .main-screen {
-    margin-bottom: 86px;
-    @media (max-width: 768px) {
-        margin-bottom: 104px;
-    }
-    @media (max-width: 500px) {
-        margin-bottom: 86px;
-    }
     &__wrap {
         display: flex;
         justify-content: space-between;

@@ -1,10 +1,10 @@
 .tabs-screen {
-    margin-bottom: 145px;
+    padding-top: 145px;
     @media (max-width: 1024px) {
-        margin-bottom: 100px;
+        padding-top: 105px;
     }
     @media (max-width: 376px) {
-        margin-bottom: 70px;
+        padding-top: 79px;
     }
     &__title {
         margin-bottom: 20px;
@@ -37,6 +37,11 @@
         margin-bottom: 20px;
         @media (max-width: 376px) {
             margin-bottom: 14px;
+        }
+    }
+    &__content {
+        @media (max-width: 1439px) {
+            justify-content: center;
         }
     }
 }
@@ -108,9 +113,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
-    @media (max-width: 1439px) {
-        justify-content: center;
-    }
     &__card {
         width: 445px;
         height: 163px;

@@ -8,26 +8,17 @@ type LinksProps = {
 
 export default function Link({link, onClickMenuWrapHandle}: LinksProps): JSX.Element {
 
-    const onClickLinkHandle = (evt: any, id?: string) => {
-        evt.preventDefault();
-        if (id) {
-            const anchor = document.querySelector(`#${id}`);
-            if(window.innerWidth > 768) {
-                anchor?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-            } else {
-                anchor?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
-            onClickMenuWrapHandle();
-        }
+    const onClickLinkHandle = () => {
+        onClickMenuWrapHandle();
     }
 
     return (
         <li className="header__item">
             <a
-                href="#"
-                id="await"
+                href={`#${link.ancorScreen}`}
+                id={`${link.id}`}
                 className="header__link"
-                onClick={(evt) => onClickLinkHandle(evt, link.ancorScreen)}
+                onClick={onClickLinkHandle}
             >{link.text}</a>
         </li>
     );

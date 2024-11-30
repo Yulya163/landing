@@ -1,12 +1,11 @@
 .image-screen {
-    margin-bottom: 145px;
-    @media (max-width: 1024px) {
-        margin-bottom: 105px;
+    padding-top: 86px;
+    @media (max-width: 768px) {
+        padding-top: 104px;
     }
-    @media (max-width: 376px) {
-        margin-bottom: 79px;
+    @media (max-width: 500px) {
+        padding-top: 86px;
     }
-
     &__title {
         margin-bottom: 45px;
         @media (max-width: 1024px) {

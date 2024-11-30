@@ -1,7 +1,10 @@
 .accordion-screen {
-    margin-bottom: 145px;
+    padding: 145px 0;
     @media (max-width: 1024px) {
-        margin-bottom: 100px;
+        padding: 98px 0 100px;
+    }
+    @media (max-width: 376px) {
+        padding-bottom: 70px;
     }
     &__title {
         margin-bottom: 59px;
@@ -36,6 +39,9 @@
             padding-bottom: 15px;
             &:not(:last-child) {
                 margin-bottom: 33px;
+            }
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }
