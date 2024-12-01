@@ -46,3 +46,18 @@ export type ContentType = {
 };
 
 export type ContentsType = ContentType[];
+
+export type SectionsContentType = Record<Section, SectionContentType>;
+
+export type SectionContentType = {
+    title: string;
+    text: string[] | [];
+}
+
+export enum Section {
+    mainScreen = "mainScreen",
+    imageScreen = "imageScreen",
+    tabsScreen = "tabsScreen",
+    flipCards = "flipCards",
+    accordionScreen = "accordionScreen",
+};

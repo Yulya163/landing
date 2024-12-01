@@ -2,8 +2,8 @@ import './TabsScreen.scss';
 import Tab from './Tab';
 import Content from './Content';
 import { useState } from 'react';
-import { tabs, content, tabsContent } from '../../data';
-import { TabType, ContentType, ContentsType } from '../../types';
+import { tabs, content, tabsContent, sectionsContent } from '../../data';
+import { TabType, ContentType, ContentsType, Section } from '../../types';
 
 const DEFAULT_TAB = 1;
 
@@ -18,15 +18,27 @@ export default function TabsScreen(): JSX.Element {
         return contentItems;
     }
 
-    const contentItems = getContentItems(activeId)
+    const contentItems = getContentItems(activeId);
+
+    const getTitle = (section: Section) => {
+        return sectionsContent[section].title || '';
+    }
+
+    const title: string = getTitle(Section.tabsScreen);
+
+    const getText = (section: Section) => {
+        return sectionsContent[section].text;
+    }
+
+    const textArr: string[] = getText(Section.tabsScreen);
 
     return (
         <section className="tabs-screen" id="tabs-screen">
             <div className="container tabs-screen__wrap">
                 <h2 className="tabs-screen__title subtitle">
-                    В первый день вас ждет интересный маршрут
+                    {title}
                 </h2>
-                <h3>Международный аэропорт Екатеринбурга обслуживает как сам Екатеринбург, так прилежащие к нему районы Свердловской области.</h3>
+                <h3>{textArr[0]}</h3>
                 <div className="tabs-screen__tabs tabs">
                     {
                         tabs.length !== 0 ?

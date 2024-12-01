@@ -1,9 +1,16 @@
-import { FlipCardsType } from './types';
-import { AccordionItemsType } from './types';
-import { MenuLinksType } from './types';
-import { TabsType } from './types';
-import { TabsContentType } from './types';
-import { ContentsType } from './types';
+import MainScreen from './components/mainScreen/MainScreen';
+import {
+    FlipCardsType,
+    AccordionItemsType,
+    MenuLinksType,
+    TabsType,
+    TabsContentType,
+    ContentsType,
+    SectionsContentType,
+    Section,
+
+} from './types';
+
 
 export const menuLinks: MenuLinksType = [
     {
@@ -214,3 +221,25 @@ export const content: ContentsType = [
     }
 ]
 
+export const sectionsContent: SectionsContentType = {
+    [Section.mainScreen]: {
+        title: 'Плотинка лесная отборная со вкусом подземного ручейка',
+        text: ['Заводская плотина в Екатеринбурге была построена в 1723 году из уральской лиственницы, которая не гниет в воде, а со временем лишь каменеет и становится крепче. В создании плотинки принял деятельное участие российский военный инженер В. И. де Геннин.','С этого места началось всё строительство города. Одновременно стали возводить крепость, защищающую будущий завод от набегов башкир, на чьих землях он и строился.']
+    },
+    [Section.imageScreen]: {
+        title: 'Что ждёт за платинкой',
+        text: ['Межгалактические порты и бесконечные просторы вселенной'],
+    },
+    [Section.tabsScreen]: {
+        title: 'В первый день вас ждет интересный маршрут',
+        text: ['Международный аэропорт Екатеринбурга обслуживает как сам Екатеринбург, так прилежащие к нему районы Свердловской области.'],
+    },
+    [Section.flipCards]: {
+        title: 'Открой все карточки и собери свое бинго',
+        text: [],
+    },
+    [Section.accordionScreen]: {
+        title: 'Еще вопросы?',
+        text: [],
+    }
+}
