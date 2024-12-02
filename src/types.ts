@@ -52,6 +52,7 @@ export type SectionsContentType = Record<Section, SectionContentType>;
 export type SectionContentType = {
     title: string;
     text: string[] | [];
+    img?: string;
 }
 
 export enum Section {

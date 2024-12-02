@@ -4,17 +4,19 @@ import { sectionsContent } from '../../data';
 import { Section } from '../../types';
 
 export default function ImageScreen(): JSX.Element {
+    const currentSection: Section = Section.imageScreen;
     const getTitle = (section: Section) => {
         return sectionsContent[section].title || '';
     }
-
-    const title: string = getTitle(Section.imageScreen);
-
+    const title: string = getTitle(currentSection);
     const getText = (section: Section) => {
         return sectionsContent[section].text;
     }
-
-    const textArr: string[] = getText(Section.imageScreen);
+    const textArr: string[] = getText(currentSection);
+    const getImgSrc = (section: Section) => {
+        return require(`./${sectionsContent[section].img}`);
+    }
+    const img = getImgSrc(currentSection)
 
     return (
         <section className="image-screen" id="image-screen">

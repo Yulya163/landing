@@ -229,6 +229,7 @@ export const sectionsContent: SectionsContentType = {
     [Section.imageScreen]: {
         title: 'Что ждёт за платинкой',
         text: ['Межгалактические порты и бесконечные просторы вселенной'],
+        img: 'photo.jpg'
     },
     [Section.tabsScreen]: {
         title: 'В первый день вас ждет интересный маршрут',
