@@ -14,10 +14,6 @@
             margin-bottom: 20px;
         }
     }
-    &__img {
-        border-radius: 16px;
-        margin-bottom: 36px;
-    }
     &__cards {
         display: flex;
         justify-content: space-between;
@@ -26,102 +22,101 @@
         @media (max-width: 1439px) {
             justify-content: center;
         }
-        .flip-card {
-            background-color: transparent;
+        .flip-card__wrap {
+            position: relative;
             width: 445px;
             height: 240px;
-            perspective: 1000px;
+            perspective: 1000;
             @media (max-width: 1024px) {
                 height: 200px;
                 max-width: 341px;
             }
-            &.rotate {
-                .flip-card__wrap {
-                    transform: rotateY(180deg);
-                }
-            }
-            &__wrap {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                transition: transform 0.8s;
-                transform-style: preserve-3d;
-            }
+        }
+        .flip-card__wrap.rotate .flip-card__front {
+            transform: rotateY(180deg);
+        }
 
-            &__front, &__back {
-                position: absolute;
-                display: flex;
-                border-radius: 16px;
-                width: 100%;
-                height: 100%;
-                -webkit-backface-visibility: hidden !important;
-                backface-visibility: hidden;
+        .flip-card__wrap.rotate .flip-card__back {
+            transform: rotateY(0deg);
+        }
+
+        .flip-card__back {
+            transform: rotateY(-180deg);
+            background-color: #fff;
+            padding: 40px 10px 40px 32px;
+            @media (max-width: 1024px) {
+                padding: 40px 10px 40px 24px;
             }
-            &__front {
-                justify-content: center;
-                align-items: center;
-                background-color: #C2F23C;
-                transition: 0.3s all;
-                z-index: 1;
-                &_bg-1 {
-                    background-image: url('./img/back_illustr_1.jpg');
-                }
-                &_bg-2 {
-                    background-image: url('./img/back_illustr_2.jpg');
-                }
-                &_bg-3 {
-                    background-image: url('./img/back_illustr_3.jpg');
-                }
-                &_bg-4 {
-                    background-image: url('./img/back_illustr_4.jpg');
-                }
-                &_bg-5 {
-                    background-image: url('./img/back_illustr_5.jpg');
-                }
-                &_bg-6 {
-                    background-image: url('./img/back_illustr_6.jpg');
-                }
+            @media (max-width: 620px) {
+                padding: 24px 10px 24px 24px;
             }
-            &__back {
-                background-color: #fff;
-                transform: rotateY(180deg);
-                padding: 40px 10px 40px 32px;
-                @media (max-width: 1024px) {
-                    padding: 40px 24px;
-                }
+        }
+
+        .flip-card__front, .flip-card__back {
+            display: flex;
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            transition: all 0.3s ease-in;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden !important;
+        }
+        .flip-card__front {
+            justify-content: center;
+            align-items: center;
+            background-color: #C2F23C;
+            &_bg-1 {
+                background-image: url('./img/back_illustr_1.jpg');
             }
-            &__title {
-                font-size: 30px;
-                font-weight: 500;
-                z-index: 2;
-                @media (max-width: 1024px) {
-                    font-size: 22px;
-                }
+            &_bg-2 {
+                background-image: url('./img/back_illustr_2.jpg');
             }
-            &__img {
-                position: absolute;
-                border-radius: 16px;
-                width: 100%;
-                top: 0;
-                left: 0;
-                z-index: 1;
+            &_bg-3 {
+                background-image: url('./img/back_illustr_3.jpg');
             }
-            &__content {
-                font-size: 20px;
-                line-height: 23px;
-                text-align: start;
-                overflow-y: auto;
-                padding-right: 10px;
-                &::-webkit-scrollbar {
-                    width: 6px;
-                }
-                &::-webkit-scrollbar-track {
-                    background: #ECECEC;
-                }
-                &::-webkit-scrollbar-thumb {
-                    background-color: #A6ABB3;
-                    border-radius: 3px;
-                }
+            &_bg-4 {
+                background-image: url('./img/back_illustr_4.jpg');
+            }
+            &_bg-5 {
+                background-image: url('./img/back_illustr_5.jpg');
+            }
+            &_bg-6 {
+                background-image: url('./img/back_illustr_6.jpg');
+            }
+        }
+        .flip-card__title {
+            font-size: 30px;
+            font-weight: 500;
+            z-index: 2;
+            @media (max-width: 1024px) {
+                font-size: 22px;
+            }
+        }
+        .flip-card__content-wrap {
+            overflow-y: auto !important;
+            padding-right: 22px;
+            @media (max-width: 1024px) {
+                padding-right: 12px;
+            }
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+            &::-webkit-scrollbar-track {
+                background: #ECECEC;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #A6ABB3;
+                border-radius: 3px;
+            }
+        }
+        .flip-card__content {
+            font-size: 20px;
+            line-height: 23px;
+            text-align: start;
+            @media (max-width: 1024px) {
+                font-size: 18px;
+                line-height: 21px;
             }
         }
     }
