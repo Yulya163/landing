@@ -4,7 +4,7 @@
         padding: 98px 0 100px;
     }
     @media (max-width: 376px) {
-        padding-bottom: 70px;
+        padding: 70px 0;
     }
     &__title {
         margin-bottom: 59px;
@@ -12,9 +12,6 @@
             margin-bottom:  7px;
             text-align: start;
         }
-    }
-    @media (max-width: 376px) {
-        margin-bottom: 71px;
     }
 }
 .accordion {
@@ -27,6 +24,9 @@
         padding-bottom: 14px;
         margin-bottom: 40px;
         border-bottom: 1px solid #A6ABB3;
+        &:last-child {
+            margin-bottom: 0;
+        }
         @media (max-width: 1024px) {
             &:not(:last-child) {
                 margin-bottom: 53px;
